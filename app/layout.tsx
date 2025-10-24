@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import Hydration from "@/components/Hydration";
 import { Suspense } from "react";
+import DisclaimerBanner from "@/components/DisclaimerBanner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,11 +32,12 @@ export default function RootLayout({
         className={`${geistSans.className} ${geistMono.variable} antialiased tracking-tighter`}
       >
         <Header />
-        <Hydration/>
+        <Hydration />
         <Suspense>
           {children}
+          <DisclaimerBanner />
         </Suspense>
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );
